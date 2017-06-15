@@ -30,6 +30,22 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.profile);
             }
         });
+
+        Button chatBut = (Button) findViewById(R.id.button3);
+        sportsBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.chats);
+            }
+        });
+
+        Button calendarBut = (Button) findViewById(R.id.button4);
+        sportsBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.calendar);
+            }
+        });
     }
 
 

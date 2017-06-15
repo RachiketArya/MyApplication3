@@ -3,7 +3,7 @@
 
     <string name="first_button">Sport Selection</string>
     <string name="second_button">View Profile</string>
-    <string name="third_button">Book Venue</string>
+    <string name="third_button">Chats</string>
     <string name="fourth_button">Calendar</string>
 
     <string name="exact">match_parent</string>

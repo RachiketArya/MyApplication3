@@ -10,8 +10,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:weightSum="4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
 
         <Button
             android:id="@+id/button"
@@ -46,8 +48,8 @@
         <Button
             android:id="@+id/button4"
             android:layout_weight="1"
-            android:layout_marginBottom="@dimen/marT"
             android:layout_marginTop="@dimen/marM"
+            android:layout_marginBottom="@dimen/marT"
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
