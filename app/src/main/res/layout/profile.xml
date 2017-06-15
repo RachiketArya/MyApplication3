@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background = "#FF8C00"
+    android:weightSum="4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:orientation="horizontal">
+
+
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="247dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/name_1"
+            android:textSize="25sp" />
+
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/ratingBar3"
+        android:layout_width="246dp"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="3.5"
+        android:stepSize="0.5"
+        android:visibility="visible"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
