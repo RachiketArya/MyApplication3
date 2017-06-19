@@ -1,5 +1,6 @@
 package com.example.rachiket.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         sportsBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.sport_match);
+                Intent i = new Intent(v.getContext(), Sports.class);
+                startActivity(i);
             }
         });
 
@@ -27,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         sportsBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.profile);
+                Intent i = new Intent(v.getContext(), MyProfile.class);
+                startActivity(i);
             }
         });
 
@@ -35,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         sportsBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.chats);
+                Intent i = new Intent(v.getContext(), Chats.class);
+                startActivity(i);
             }
         });
 
@@ -43,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         sportsBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.calendar);
+                Intent i = new Intent(v.getContext(), Calendar.class);
+                startActivity(i);
             }
         });
     }

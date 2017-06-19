@@ -17,6 +17,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MyProfile"
+            android:label="NUS Sports Match"
+            />
+
+        <activity android:name=".Sports"
+            android:label="NUS Sports Match"
+            />
+
+        <activity android:name=".Calendar"
+            android:label="NUS Sports Match"
+            />
+
+        <activity android:name=".Chats"
+            android:label="NUS Sports Match"
+            />
+
     </application>
 
 </manifest>
