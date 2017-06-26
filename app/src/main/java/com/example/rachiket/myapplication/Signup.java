@@ -46,6 +46,8 @@ public class Signup extends AppCompatActivity {
             finish();
         }
         else{
+            alert.setTextColor(getResources().getColor(R.color.red));
+            alert.setTextSize(9);
             alert.setText("Passwords dont match");
         }
 
