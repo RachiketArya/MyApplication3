@@ -33,6 +33,11 @@
         <activity android:name=".Chats"
             android:label="NUS Sports Match"
             />
+        <activity android:name=".Signup"
+            android:label="NUS Sports Match"
+            />
+        <activity android:name=".menuAfterLogin"
+            android:label="NUS Sports Match"/>
 
     </application>
 

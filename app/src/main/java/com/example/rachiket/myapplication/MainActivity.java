@@ -5,53 +5,60 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.*;
 
 public class MainActivity extends AppCompatActivity {
-
-
+    public static List<Player> All;
+    public EditText password;
+    public EditText name;
+    public Button Login;
+    public Button sign_up;
+    public TextView alert;
+    public static int select=-1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_login_page);
+        initialiseUI();
 
-        Button sportsBut = (Button) findViewById(R.id.button);
-        sportsBut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), Sports.class);
-                startActivity(i);
-            }
-        });
-
-        Button profileBut = (Button) findViewById(R.id.button2);
-        sportsBut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), MyProfile.class);
-                startActivity(i);
-            }
-        });
-
-        Button chatBut = (Button) findViewById(R.id.button3);
-        sportsBut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), Chats.class);
-                startActivity(i);
-            }
-        });
-
-        Button calendarBut = (Button) findViewById(R.id.button4);
-        sportsBut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), Calendar.class);
-                startActivity(i);
-            }
-        });
+    }
+    public void checkprofile(View view){
+        boolean flag=false;
+        for(int i=0;i<All.size();i++) {
+            if (All.get(i).getname().equals(name.getText().toString()) &&
+                    All.get(i).getpassword().equals(password.getText().toString()))
+                {
+                       select=i;
+                       Intent intent = new Intent(this, menuAfterLogin.class);
+                       startActivity(intent);
+                    flag=true;
+                    break;
+                }
+        }
+        if(flag==false){
+            alert.setTextColor(getResources().getColor(R.color.red));
+            alert.setTextSize(9);
+            alert.setText("Incorect Username/Password");
+        }
     }
 
+
+    public void signup(View view){
+        Intent i = new Intent(this, Signup.class);
+        startActivity(i);
+    }
+    public void initialiseUI(){
+        password=(EditText)findViewById(R.id.password);
+        name=(EditText)findViewById(R.id.name);
+        Login=(Button)findViewById(R.id.login);
+        sign_up=(Button)findViewById(R.id.signup);
+        alert=(TextView)findViewById(R.id.alert);
+        if(select==-1){
+            All=Player.allplayers();
+        }
+    }
 
 }
