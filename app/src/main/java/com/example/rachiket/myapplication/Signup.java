@@ -43,7 +43,6 @@ public class Signup extends AppCompatActivity {
             newplayer.setpassword(pass.getText().toString());
             newplayer.setRating(Integer.getInteger(rating.getText().toString()));
             MainActivity.All.add(newplayer);
-            finish();
         }
         else{
             alert.setTextColor(getResources().getColor(R.color.red));
