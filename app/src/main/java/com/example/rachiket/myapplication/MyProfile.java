@@ -18,6 +18,7 @@ public class MyProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
+        initialiseUI();
         name.setText(MainActivity.All.get(MainActivity.select).getname());
         rating.setRating(MainActivity.All.get(MainActivity.select).getRating());
 
