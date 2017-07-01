@@ -24,6 +24,7 @@ public class MyProfile extends AppCompatActivity {
         rating.setRating(MainActivity.All.get(MainActivity.select).getRating());
 
     }
+    //initialising the elements of the user interface
     public void initialiseUI(){
         name=(EditText)findViewById(R.id.name);
         rating=(RatingBar)findViewById(R.id.ratingBar3);

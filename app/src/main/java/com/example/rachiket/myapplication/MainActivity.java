@@ -25,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
         initialiseUI();
 
     }
+    //check the profile for the entered data
     public void checkprofile(View view){
         boolean flag=false;
+        //local data compared
         for(int i=0;i<All.size();i++) {
             if (All.get(i).getname().equals(name.getText().toString()) &&
                     All.get(i).getpassword().equals(password.getText().toString()))
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Signup.class);
         startActivity(i);
     }
+    //initialising the UI elements
     public void initialiseUI(){
         password=(EditText)findViewById(R.id.password);
         name=(EditText)findViewById(R.id.name);
