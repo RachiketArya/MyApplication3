@@ -11,6 +11,8 @@ import java.util.*;
 public class Player implements PlayerInterface{
     //class contains name,password ans string
     private String name;
+    public static boolean addedplayer=false;
+    public static int playerselect;
     private String password;
     private int rating;
     // functions overriden from the interface

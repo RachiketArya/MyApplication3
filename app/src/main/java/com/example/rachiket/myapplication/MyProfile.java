@@ -20,8 +20,8 @@ public class MyProfile extends AppCompatActivity {
         setContentView(R.layout.profile);
         initialiseUI();
         //setting profile
-        name.setText(MainActivity.All.get(MainActivity.select).getname());
-        rating.setRating(MainActivity.All.get(MainActivity.select).getRating());
+        name.setText(MainActivity.All.get(Player.playerselect).getname());
+        rating.setRating(MainActivity.All.get(Player.playerselect).getRating());
 
     }
     //initialising the elements of the user interface

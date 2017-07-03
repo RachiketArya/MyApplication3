@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,11 +21,13 @@ public class Signup extends AppCompatActivity {
     public EditText confirmpass;
     public EditText rating;
     public TextView alert;
+    public Button confirmbut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
         initialiseUI();
+
     }
     //initialises the UI of the signup activity
     public void initialiseUI(){
@@ -33,6 +36,7 @@ public class Signup extends AppCompatActivity {
         rating=(EditText)findViewById(R.id.rating);
         confirmpass=(EditText)findViewById(R.id.confirmpass);
         alert=(TextView)findViewById(R.id.alert);
+        confirmbut=(Button)findViewById(R.id.confirmbut);
     }
     //addprofile invoked when button confirm is clicked
     public void addprofile(View view){
@@ -42,7 +46,11 @@ public class Signup extends AppCompatActivity {
             newplayer.setname(name.getText().toString());
             newplayer.setpassword(pass.getText().toString());
             newplayer.setRating(Integer.getInteger(rating.getText().toString()));
-            MainActivity.All.add(newplayer);
+            Player.addedplayer=true;
+            finish();
+            Intent intent=new Intent()
+                    .setClass(this,MainActivity.class);
+            startActivity(intent);
         }
         else{
             alert.setTextColor(getResources().getColor(R.color.red));

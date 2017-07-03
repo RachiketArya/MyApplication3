@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public Button Login;
     public Button sign_up;
     public TextView alert;
-    public static int select=-1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
             if (All.get(i).getname().equals(name.getText().toString()) &&
                     All.get(i).getpassword().equals(password.getText().toString()))
                 {
-                       select=i;
-                       Intent intent = new Intent(this, menuAfterLogin.class);
-                       startActivity(intent);
+                       Player.playerselect=i;
                     flag=true;
+                    Intent intent = new Intent(this, menuAfterLogin.class);
+                    startActivity(intent);
                     break;
                 }
         }
@@ -44,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
             alert.setTextColor(getResources().getColor(R.color.red));
             alert.setTextSize(9);
             alert.setText("Incorect Username/Password");
+        }
+        else
+        {
+            finish();
         }
     }
 
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         Login=(Button)findViewById(R.id.login);
         sign_up=(Button)findViewById(R.id.signup);
         alert=(TextView)findViewById(R.id.alert);
-        if(select==-1){
+        if(Player.addedplayer==false){
             All=Player.allplayers();
         }
     }
