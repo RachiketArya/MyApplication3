@@ -14,7 +14,7 @@
         android:background="@color/darkblue"
         android:drawableTint="@color/blue"
         android:onClick="addprofile"
-        android:text="Signup"
+        android:text="Sign Up"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold" />
