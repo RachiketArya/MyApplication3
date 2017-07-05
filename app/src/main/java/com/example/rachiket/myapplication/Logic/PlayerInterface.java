@@ -1,4 +1,4 @@
-package com.example.rachiket.myapplication;
+package com.example.rachiket.myapplication.Logic;
 
 /**
  * Created by Harsh Goel on 6/26/2017.
@@ -9,6 +9,6 @@ public interface PlayerInterface {
     public String getname();
     public void setpassword(String s);
     public String getpassword();
-    public void setRating(int k);
-    public int getRating();
+    public void setRating(Rating k);
+    public Rating getRating();
 }

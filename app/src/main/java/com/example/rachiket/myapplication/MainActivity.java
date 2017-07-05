@@ -1,12 +1,15 @@
 package com.example.rachiket.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.rachiket.myapplication.Logic.Player;
 
 import java.util.*;
 
@@ -34,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 {
                        Player.playerselect=i;
                     flag=true;
-                    Intent intent = new Intent(this, menuAfterLogin.class);
-                    startActivity(intent);
                     break;
                 }
         }
@@ -44,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
             alert.setTextSize(9);
             alert.setText("Incorect Username/Password");
         }
-        else
-        {
+        else{
+            Intent intent = new Intent(this, menuAfterLogin.class);
+            startActivity(intent);
             finish();
         }
     }
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     public void signup(View view){
         Intent i = new Intent(this, Signup.class);
         startActivity(i);
+        finish();
     }
     //initialising the UI elements
     public void initialiseUI(){

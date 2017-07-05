@@ -1,5 +1,4 @@
-package com.example.rachiket.myapplication;
-import com.example.rachiket.myapplication.PlayerInterface;
+package com.example.rachiket.myapplication.Logic;
 
 
 import java.util.*;
@@ -14,7 +13,7 @@ public class Player implements PlayerInterface{
     public static boolean addedplayer=false;
     public static int playerselect;
     private String password;
-    private int rating;
+    private Rating rating;
     // functions overriden from the interface
     public void setname(String s){
         name=s;
@@ -36,16 +35,17 @@ public class Player implements PlayerInterface{
             Player newplayer=new Player();
             newplayer.setname("Player"+i);
             newplayer.setpassword("password"+i);
-            newplayer.setRating(obj.nextInt(5)+1);
+            Rating rate=new Rating(obj.nextDouble()*5,obj.nextDouble()*5,obj.nextDouble()*5);
+            newplayer.setRating(rate);
             playerlist.add(newplayer);
 
         }
         return playerlist;
     }
-    public int getRating(){
+    public Rating getRating(){
         return rating;
     }
-    public void setRating(int k){
+    public void setRating(Rating k){
         rating = k;
     }
 }

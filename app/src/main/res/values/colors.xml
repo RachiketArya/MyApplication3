@@ -14,4 +14,6 @@
     <item name="darkorange" type="color">#FFFF8800</item>
     <item name="darkred" type="color">#FFCC0000</item>
     <item name="yellow" type="color">#FFFF00</item>
+    <item name="white" type="color">#FAFFFFFA</item>
+    <item name="sky_blue" type="color">#AABFFF</item>
 </resources>

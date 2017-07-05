@@ -2,9 +2,11 @@ package com.example.rachiket.myapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.TextView;
+
+import com.example.rachiket.myapplication.Logic.Player;
 
 /**
  * Created by Rachiket on 19-06-2017.
@@ -12,7 +14,7 @@ import android.widget.RatingBar;
 
 public class MyProfile extends AppCompatActivity {
 
-    public EditText name;
+    public TextView name;
     public RatingBar rating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +23,12 @@ public class MyProfile extends AppCompatActivity {
         initialiseUI();
         //setting profile
         name.setText(MainActivity.All.get(Player.playerselect).getname());
-        rating.setRating(MainActivity.All.get(Player.playerselect).getRating());
+        rating.setRating((float)MainActivity.All.get(Player.playerselect).getRating().getRatingNetSkill());
 
     }
     //initialising the elements of the user interface
     public void initialiseUI(){
-        name=(EditText)findViewById(R.id.name);
+        name=(TextView)findViewById(R.id.name);
         rating=(RatingBar)findViewById(R.id.ratingBar3);
 
     }

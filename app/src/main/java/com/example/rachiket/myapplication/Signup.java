@@ -8,8 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.*;
-import com.example.rachiket.myapplication.Player;
+import com.example.rachiket.myapplication.Logic.Player;
 /**
  * Created by Harsh Goel on 6/26/2017.
  */
@@ -39,23 +38,41 @@ public class Signup extends AppCompatActivity {
         confirmbut=(Button)findViewById(R.id.confirmbut);
     }
     //addprofile invoked when button confirm is clicked
-    public void addprofile(View view){
+    public void addprofile(View view) {
         //adds the profile if the password and confirm password strings match
-        if(pass.getText().toString().equals(confirmpass.getText().toString())) {
+        String password = pass.getText().toString();
+        String confirmpassword = pass.getText().toString();
+        boolean checkpass=analyse_password(password,confirmpassword);
+        if(checkpass==true){
             Player newplayer = new Player();
             newplayer.setname(name.getText().toString());
             newplayer.setpassword(pass.getText().toString());
-            newplayer.setRating(Integer.getInteger(rating.getText().toString()));
             Player.addedplayer=true;
             finish();
             Intent intent=new Intent()
                     .setClass(this,MainActivity.class);
             startActivity(intent);
+            finish();
+        }
+
+    }
+    public boolean analyse_password(String pass1,String pass2){
+
+        if (pass1.equals(pass2)) {
+            if (pass.length() < 8) {
+                alert.setTextColor(getResources().getColor(R.color.red));
+                alert.setTextSize(9);
+                alert.setText("Passwords too small");
+                return false;
+            } else {
+                return true;
+            }
         }
         else{
             alert.setTextColor(getResources().getColor(R.color.red));
             alert.setTextSize(9);
             alert.setText("Passwords dont match");
+            return false;
         }
 
     }
