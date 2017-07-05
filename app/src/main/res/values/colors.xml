@@ -16,4 +16,5 @@
     <item name="yellow" type="color">#FFFF00</item>
     <item name="white" type="color">#FAFFFFFA</item>
     <item name="sky_blue" type="color">#AABFFF</item>
+    <item name="lightorange" type="color">#F6CC98</item>
 </resources>
