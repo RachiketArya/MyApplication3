@@ -18,7 +18,6 @@ public class Signup extends AppCompatActivity {
     public EditText name;
     public EditText pass;
     public EditText confirmpass;
-    public EditText rating;
     public TextView alert;
     public Button confirmbut;
     @Override
@@ -32,7 +31,6 @@ public class Signup extends AppCompatActivity {
     public void initialiseUI(){
         name=(EditText)findViewById(R.id.name);
         pass=(EditText)findViewById(R.id.pass);
-        rating=(EditText)findViewById(R.id.rating);
         confirmpass=(EditText)findViewById(R.id.confirmpass);
         alert=(TextView)findViewById(R.id.alert);
         confirmbut=(Button)findViewById(R.id.confirmbut);
@@ -48,11 +46,7 @@ public class Signup extends AppCompatActivity {
             newplayer.setname(name.getText().toString());
             newplayer.setpassword(pass.getText().toString());
             Player.addedplayer=true;
-            finish();
-            Intent intent=new Intent()
-                    .setClass(this,MainActivity.class);
-            startActivity(intent);
-            finish();
+
         }
 
     }
@@ -60,13 +54,19 @@ public class Signup extends AppCompatActivity {
 
         if (pass1.equals(pass2)) {
             if (pass.length() < 8) {
-                alert.setTextColor(getResources().getColor(R.color.red));
+                alert.setTextColor(getResources().getColor(R.color.lightorange));
                 alert.setTextSize(9);
                 alert.setText("Passwords too small");
                 return false;
             } else {
                 return true;
             }
+        }
+        else if(pass1.isEmpty()||pass2.isEmpty()){
+            alert.setTextColor(getResources().getColor(R.color.lightred));
+            alert.setTextSize(9);
+            alert.setText("Passwords not entered");
+            return false;
         }
         else{
             alert.setTextColor(getResources().getColor(R.color.red));
@@ -75,6 +75,12 @@ public class Signup extends AppCompatActivity {
             return false;
         }
 
+    }
+    public void signin(View view){
+        Intent intent=new Intent()
+                .setClass(this,MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }
