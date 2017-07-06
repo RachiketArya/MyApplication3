@@ -116,5 +116,8 @@ public class Signup extends AppCompatActivity {
     /*public boolean onCreatOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main,menu);
     }
-    */
+    *
+    /*Toadd: 1.toasts for empty fields
+    2.to confirm tool bar is invisible
+     */
 }

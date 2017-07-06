@@ -2,7 +2,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -61,15 +60,6 @@
         android:text="Sign In"
         android:textColor="@color/white"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/alert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hjjnjhhjhj"
-        android:layout_below="@+id/signup"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp" />
 
     <ImageView
         android:id="@+id/imageView2"

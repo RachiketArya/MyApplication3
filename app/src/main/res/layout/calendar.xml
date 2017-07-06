@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <CalendarView
-        android:background="#FF8C00"
+        android:background="@color/sky_blue"
         android:id="@+id/calendarView"
         android:weekDayTextAppearance="@color/colorPrimary"
         android:layout_width="match_parent"

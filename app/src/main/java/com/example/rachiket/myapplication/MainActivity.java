@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rachiket.myapplication.Logic.Player;
 
@@ -20,7 +22,6 @@ public class MainActivity extends Activity {
     public EditText name;
     public Button Login;
     public Button sign_up;
-    public TextView alert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +44,9 @@ public class MainActivity extends Activity {
                 }
         }
         if(flag==false){
-            alert.setTextColor(getResources().getColor(R.color.red));
-            alert.setTextSize(9);
-            alert.setText("Incorect Username/Password");
+            Toast toast = Toast.makeText(getApplicationContext(),"Incorrect Username/Password",Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER,0,10);
+            toast.show();
         }
         else{
             Intent intent = new Intent(this, menuAfterLogin.class);
@@ -66,10 +67,11 @@ public class MainActivity extends Activity {
         name=(EditText)findViewById(R.id.name);
         Login=(Button)findViewById(R.id.login);
         sign_up=(Button)findViewById(R.id.signup);
-        alert=(TextView)findViewById(R.id.alert);
         if(Player.addedplayer==false){
             All=Player.allplayers();
         }
     }
+/*To confirm if tool bar is removed
+*/
 
 }

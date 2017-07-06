@@ -9,6 +9,4 @@ public interface PlayerInterface {
     public String getname();
     public void setpassword(String s);
     public String getpassword();
-    public void setRating(Rating k);
-    public Rating getRating();
 }
