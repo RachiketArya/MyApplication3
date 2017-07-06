@@ -1,9 +1,11 @@
 package com.example.rachiket.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,7 +14,7 @@ import com.example.rachiket.myapplication.Logic.Player;
 
 import java.util.*;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     public static List<Player> All;
     public EditText password;
     public EditText name;
@@ -22,11 +24,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         initialiseUI();
 
     }
-    //check the profile for the entered data
+    //check the profilelogin for the entered data
     public void checkprofile(View view){
         boolean flag=false;
         //local data compared

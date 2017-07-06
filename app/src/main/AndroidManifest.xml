@@ -8,11 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:logo="@color/blue"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
 
         <activity android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
             >
 
             <intent-filter>
@@ -21,10 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MyProfile"
-            android:label="NUS Sports Match"
-            />
 
         <activity android:name=".Sports"
             android:label="NUS Sports Match"
@@ -39,7 +34,7 @@
             />
         <activity android:name=".Signup"
             android:label="NUS Sports Match"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
             />
         <activity android:name=".menuAfterLogin"
             android:label="NUS Sports Match"/>

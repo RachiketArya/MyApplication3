@@ -14,7 +14,7 @@ public class menuAfterLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile);
+        setContentView(R.layout.profilelogin);
         Button sportsBut = (Button) findViewById(R.id.button);
         sportsBut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,7 +24,7 @@ public class menuAfterLogin extends AppCompatActivity {
             }
         });
 
-        Button profileBut = (Button) findViewById(R.id.button2);
+       /* Button profileBut = (Button) findViewById(R.id.button2);
         profileBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +32,7 @@ public class menuAfterLogin extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+*/
         Button chatBut = (Button) findViewById(R.id.button3);
         chatBut.setOnClickListener(new View.OnClickListener() {
             @Override

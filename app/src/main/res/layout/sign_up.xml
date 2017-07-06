@@ -54,17 +54,6 @@
         android:layout_alignStart="@+id/pass"
         android:layout_marginTop="29dp" />
 
-    <TextView
-        android:id="@+id/alert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@color/darkred"
-        android:textStyle="bold"
-        android:layout_below="@+id/signin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
