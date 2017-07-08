@@ -37,6 +37,8 @@
             />
         <activity android:name=".menuAfterLogin"
             android:label="NUS Sports Match"/>
+        <activity android:name=".ProfileDataPackage.ProfileData" />
+        <activity android:name=".ProfileDataPackage.handlephoto"/>
 
     </application>
 

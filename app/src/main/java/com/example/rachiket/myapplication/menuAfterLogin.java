@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.rachiket.myapplication.ProfileDataPackage.ProfileData;
+
 /**
  * Created by Harsh Goel on 6/25/2017.
  */
@@ -24,15 +26,14 @@ public class menuAfterLogin extends AppCompatActivity {
             }
         });
 
-       /* Button profileBut = (Button) findViewById(R.id.button2);
+       Button profileBut = (Button) findViewById(R.id.button2);
         profileBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), MyProfile.class);
+                Intent i = new Intent(v.getContext(), ProfileData.class);
                 startActivity(i);
             }
         });
-*/
         Button chatBut = (Button) findViewById(R.id.button3);
         chatBut.setOnClickListener(new View.OnClickListener() {
             @Override

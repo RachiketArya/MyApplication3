@@ -53,6 +53,9 @@ public class Player implements PlayerInterface{
     public Bitmap getProfilephoto(){
         return profilephoto;
     }
+    public void setProfilephoto(Bitmap photo){
+        profilephoto=photo;
+    }
     /*
     public Rating getRating(){
         return rating;
