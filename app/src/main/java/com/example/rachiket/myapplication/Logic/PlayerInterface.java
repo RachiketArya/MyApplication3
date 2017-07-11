@@ -5,8 +5,10 @@ package com.example.rachiket.myapplication.Logic;
  */
 //Interface defines the functions reuired by the player class
 public interface PlayerInterface {
-    public void setname(String s);
-    public String getname();
+    public void setName(String s);
+    public String getName();
+    public void setEmail(String s);
+    public String getEmail();
     public void setpassword(String s);
     public String getpassword();
 }

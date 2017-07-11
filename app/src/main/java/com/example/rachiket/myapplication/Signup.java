@@ -3,6 +3,7 @@ package com.example.rachiket.myapplication;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -15,16 +16,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rachiket.myapplication.Logic.Player;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 /**
  * Created by Harsh Goel on 6/26/2017.
  */
 //declaration of the signup class
 public class Signup extends AppCompatActivity {
     //UI components
-    public EditText name;
+    public EditText email;
     public EditText pass;
     public EditText confirmpass;
     public Button confirmbut;
+    private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +45,11 @@ public class Signup extends AppCompatActivity {
     }
     //initialises the UI of the signup activity
     public void initialiseUI(){
-        name=(EditText)findViewById(R.id.name);
+        email=(EditText)findViewById(R.id.email);
         pass=(EditText)findViewById(R.id.pass);
         confirmpass=(EditText)findViewById(R.id.confirmpass);
         confirmbut=(Button)findViewById(R.id.confirmbut);
+        auth=FirebaseAuth.getInstance();
     }
     //addprofile invoked when button confirm is clicked
     public void addprofile(View view) {
@@ -49,6 +57,7 @@ public class Signup extends AppCompatActivity {
         String password = pass.getText().toString();
         String confirmpassword = pass.getText().toString();
         boolean checkpass=analyse_password(password,confirmpassword);
+        //Dialog box is shown
         if(checkpass==true){
             AlertDialog.Builder dialogbox=new AlertDialog.Builder(Signup.this);
             dialogbox.setMessage("Do You Want To Proceed ?")
@@ -56,9 +65,10 @@ public class Signup extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Player newplayer = new Player();
-                            newplayer.setname(name.getText().toString());
+                            newplayer.setEmail(email.getText().toString());
                             newplayer.setpassword(pass.getText().toString());
                             Player.addedplayer=true;
+                            firebaseadd(newplayer.getEmail(),newplayer.getpassword());
                             Intent intent=new Intent()
                                     .setClass(Signup.this,MainActivity.class);
                             startActivity(intent);
@@ -75,6 +85,22 @@ public class Signup extends AppCompatActivity {
             alert.show();
         }
 
+    }
+    public void firebaseadd(String s1,String s2){
+        auth.createUserWithEmailAndPassword(s1,s2)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        //checking if success
+                        if(task.isSuccessful()){
+                            //display some message here
+                            Toast.makeText(getApplicationContext(),"Successfully registered",Toast.LENGTH_LONG).show();
+                        }else{
+                            //display some message here
+                            Toast.makeText(getApplicationContext(),"Registration Error",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
     }
     public boolean analyse_password(String pass1,String pass2){
 

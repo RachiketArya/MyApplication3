@@ -19,7 +19,7 @@ import java.util.*;
 public class MainActivity extends Activity {
     public static List<Player> All;
     public EditText password;
-    public EditText name;
+    public EditText email;
     public Button Login;
     public Button sign_up;
     @Override
@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         boolean flag=false;
         //local data compared
         for(int i=0;i<All.size();i++) {
-            if (All.get(i).getname().equals(name.getText().toString()) &&
+            if (All.get(i).getEmail().equals(email.getText().toString()) &&
                     All.get(i).getpassword().equals(password.getText().toString()))
                 {
                        Player.playerselect=i;
@@ -64,13 +64,14 @@ public class MainActivity extends Activity {
     //initialising the UI elements
     public void initialiseUI(){
         password=(EditText)findViewById(R.id.password);
-        name=(EditText)findViewById(R.id.name);
+        email=(EditText)findViewById(R.id.email);
         Login=(Button)findViewById(R.id.login);
         sign_up=(Button)findViewById(R.id.signup);
         if(Player.addedplayer==false){
             All=Player.allplayers();
         }
     }
+
 /*To confirm if tool bar is removed
 */
 
