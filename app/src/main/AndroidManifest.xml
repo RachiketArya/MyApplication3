@@ -7,11 +7,12 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:logo="@color/blue"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:label="@string/app_name"
+        >
 
         <activity android:name=".MainActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
-            >
+            android:label="Blob">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,10 +34,10 @@
             />
         <activity android:name=".Signup"
             android:label="NUS Sports Match"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+
             />
         <activity android:name=".menuAfterLogin"
-            android:label="NUS Sports Match"/>
+            android:label="lol"/>
         <activity android:name=".ProfileDataPackage.ProfileData" />
         <activity android:name=".ProfileDataPackage.handlephoto"/>
 

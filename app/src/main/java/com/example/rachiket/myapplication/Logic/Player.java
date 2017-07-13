@@ -25,14 +25,10 @@ public class Player implements PlayerInterface{
     public static boolean addedplayer=false;
     public static int playerselect;
     private String password;
-    private Rating rating_tennis;
-    private Rating rating_squash;
-    private Rating rating_tt;
-    private Rating rating_badminton;
-    public boolean tennisSelect;
-    public boolean squashSelect;
-    public boolean ttSelect;
-    public boolean badmintonSelect;
+    private sportsPlayer tennis;
+    private sportsPlayer squash;
+    private sportsPlayer tt;
+    private sportsPlayer badminton;
     // functions overriden from the interface
     public void setEmail(String s){
         email=s;
@@ -73,6 +69,10 @@ public class Player implements PlayerInterface{
     public void setProfilephoto(Uri photo){
         profilephoto=photo;
     }
+    public sportsPlayer getTennis(){return tennis;}
+    public sportsPlayer getTt(){return tt;}
+    public sportsPlayer getSquash(){return squash;}
+    public sportsPlayer getBadminton(){return badminton;}
     /*
     public Rating getRating(){
         return rating;

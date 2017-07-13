@@ -19,4 +19,5 @@
     <item name="black" type="color">#000000</item>
     <item name="lightorange" type="color">#F6CC98</item>
     <item name="lightred" type="color">#AFFE2222</item>
+    <item name="lightyellow" type="color">#e9e4f58e</item>
 </resources>

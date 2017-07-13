@@ -35,7 +35,6 @@ public class Signup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.sign_up);
        // getSupportActionBar().setHomeButtonEnabled(true);
         // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -63,7 +62,7 @@ public class Signup extends AppCompatActivity {
             dialogbox.setMessage("Do You Want To Proceed ?")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                        public void onClick(DialogInterface dialog,int which) {
                             Player newplayer = new Player();
                             newplayer.setEmail(email.getText().toString());
                             newplayer.setpassword(pass.getText().toString());
